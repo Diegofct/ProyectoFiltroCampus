@@ -1,8 +1,8 @@
 from commons.utils import limpiar_pantalla
 from commons.menus import menu_principal,menu_trainers,menu_campers,menu_matriculas,menu_aulas,menu_reportes,menu_rutas_entrenamiento
-from businnes.campers import crear_camper,listar_campers
+from businnes.campers import crear_camper,listar_campers, registrar_notas_prueba
 from businnes.rutasEntrenamiento import rutas_entrenamiento, listar_rutas
-
+from businnes.aulas import crear_aula, listar_aulas
 
 # funtions
 def campers():      
@@ -13,6 +13,9 @@ def campers():
        input("Clic cualquier teclas [continuar]: ")
     if op==2:
        listar_campers()
+       input("Clic cualquier teclas [continuar]: ")
+    if op==3:
+       registrar_notas_prueba()
        input("Clic cualquier teclas [continuar]: ")
 
 def rutas_entrenamiento():
@@ -33,6 +36,12 @@ def matriculas():
 def aulas():
     limpiar_pantalla()    
     op=menu_aulas()
+    if op==1:
+        crear_aula()
+        input("Clic cualquier teclas [continuar]: ")
+    if op==2:
+        listar_aulas()
+        input("Clic cualquier teclas [continuar]: ")
 
 def reportes():
     limpiar_pantalla()    

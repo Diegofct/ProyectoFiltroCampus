@@ -21,7 +21,13 @@ def crear_camper():
     edad = int(input("Ingrese la edad del camper: "))
     email = input("Ingrese el correo electrónico del camper: ")
     telefono = input("Ingrese el número de teléfono del camper: ")
-    estado = "inscrito"
+    estado = input("Ingrese el estado del camper: ")
+
+    notas_prueba = {
+        'teorica': 0,
+        'practica': 0,
+        'promedio': 0
+    }
 
     camper = {
         'id': identificacion,
@@ -32,7 +38,8 @@ def crear_camper():
         'edad': edad,
         'email': email,
         'telefono': telefono,
-        'estado': estado
+        'estado': estado,
+        'notasPrueba': notas_prueba
     }
 
     lista_campers.append(camper)
@@ -43,8 +50,15 @@ def crear_camper():
 def guardar_json():
     try:
       with open(os.path.join("data", "campers.json"), 'w') as archivo_json:
-        json.dump(lista_campers, archivo_json, indent=2)
-        print("La lista de campers ha sido guardada")
+            for camper in lista_campers:
+                if 'notas_prueba' in camper:
+                    camper['notas_prueba'] = {
+                        'teorica': camper['notas_prueba']['teorica'],
+                        'practica': camper['notas_prueba']['practica'],
+                        'promedio': camper['notas_prueba']['promedio']
+                    }
+            json.dump(lista_campers, archivo_json, indent=2)
+            print("La lista de campers ha sido guardada")
     except FileNotFoundError:
         print("El archivo no existe. Puede que aún no haya campers guardados.")
     except json.JSONDecodeError:
@@ -57,3 +71,29 @@ def listar_campers():
     print("Listado de campers: ")
     for camper in lista_campers:
         print(camper)
+
+
+def registrar_notas_prueba():
+    id_camper = int(input("Ingrese el ID del camper: "))
+    
+    camper_encontrado = None
+    for camper in lista_campers:
+        if camper['id'] == id_camper:
+            camper_encontrado = camper
+            break
+
+    if camper_encontrado:
+        
+        nota_teorica = float(input("Ingrese la nota teórica: "))
+        nota_practica = float(input("Ingrese la nota práctica: "))
+
+        promedio = (nota_teorica + nota_practica) / 2
+
+        camper_encontrado['notas_prueba'] = {'teorica': nota_teorica, 'practica': nota_practica, 'promedio': promedio}
+
+        print(f"Notas registradas para el camper {camper_encontrado['nombre']} {camper_encontrado['apellidos']}.")
+        print(f"Nota Teórica: {nota_teorica}, Nota Práctica: {nota_practica}, Promedio: {promedio}")
+
+        guardar_json()
+    else:
+        print("Camper no encontrado.")
