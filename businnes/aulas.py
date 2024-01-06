@@ -20,7 +20,7 @@ def crear_aula():
     aula = {
         'nombre': nombre_aula,
         'capacidad_maxima': capacidad_maxima,
-        'capacidad_actual': 0,  # Inicialmente, no hay campers asignados
+        'capacidad_actual': 0,
         'ruta_asignada': asignar_ruta
     }
 

@@ -1,5 +1,6 @@
 import json
 import os
+from businnes.aulas import *
 
 def load_campers_json():
     try:
@@ -78,7 +79,7 @@ def registrar_notas_prueba():
     
     camper_encontrado = None
     for camper in lista_campers:
-        if camper['id'] == id_camper:
+        if camper.get('id') == id_camper:
             camper_encontrado = camper
             break
 
@@ -93,6 +94,13 @@ def registrar_notas_prueba():
 
         print(f"Notas registradas para el camper {camper_encontrado['nombre']} {camper_encontrado['apellidos']}.")
         print(f"Nota Teórica: {nota_teorica}, Nota Práctica: {nota_practica}, Promedio: {promedio}")
+
+        if promedio >= 60:
+            camper_encontrado['estado'] = 'aprobado'
+            print("El camper ha sido aprobado.")
+        else:
+            camper_encontrado['estado'] = 'No aprobado'
+            print("El camper no alcanzó la nota mínima para aprobar.")
 
         guardar_json()
     else:
