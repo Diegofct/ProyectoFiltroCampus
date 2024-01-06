@@ -14,12 +14,9 @@ lista_rutasEntrenamiento = load_rutas_json()
 
 
 def rutas_entrenamiento():
-    cantidadRutas = 3
-    for i in range(cantidadRutas):
-        nombreRuta = input(f"Digite el nombre de la ruta {i}")
-
+    
     ruta_nodejs = {
-        "nombre": nombreRuta,
+        "nombre": "NodeJS",
         "fundamentos": ["Introducción a la algoritmia", "PSeInt", "Python"],
         "programacion_web": ["HTML", "CSS", "Bootstrap"],
         "programacion_formal": ["JavaScript"],
@@ -28,7 +25,7 @@ def rutas_entrenamiento():
     }
 
     ruta_java = {
-        "nombre": nombreRuta,
+        "nombre": "Java",
         "fundamentos": ["Introducción a la algoritmia", "PSeInt", "Python"],
         "programacion_web": ["HTML", "CSS", "Bootstrap", "JavaScript"],
         "programacion_formal": ["Java"],
@@ -37,7 +34,7 @@ def rutas_entrenamiento():
     }
 
     ruta_netcore = {
-        "nombre": nombreRuta,
+        "nombre": "NetCore",
         "fundamentos": ["Introducción a la algoritmia", "PSeInt", "Python"],
         "programacion_web": ["HTML", "CSS", "JavaScript"],
         "programacion_formal": ["C#"],
@@ -45,13 +42,16 @@ def rutas_entrenamiento():
         "backend": ["NetCore"]
     }
 
-    lista_rutasEntrenamiento.append(ruta_nodejs, ruta_java, ruta_netcore)
-    guardar_json()
+    lista_rutasEntrenamiento.append(ruta_nodejs)
+    lista_rutasEntrenamiento.append(ruta_java)
+    lista_rutasEntrenamiento.append(ruta_netcore)
+    guardar_json_rutas()
+    listar_rutas()
 
 
-def guardar_json():
+def guardar_json_rutas():
     try:
-      with open(os.path.join("data", "campers.json"), 'w') as rutas_json:
+      with open(os.path.join("data", "rutasEntrenamiento.json"), 'w') as rutas_json:
         json.dump(lista_rutasEntrenamiento, rutas_json, indent=2)
         print("La lista de campers ha sido guardada")
     except FileNotFoundError:
@@ -66,3 +66,4 @@ def listar_rutas():
     print("Listado de las rutas de entrenamiento: ")
     for ruta in lista_rutasEntrenamiento:
         print(ruta)
+
