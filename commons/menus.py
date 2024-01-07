@@ -51,7 +51,7 @@ def menu_aulas():
     print("----------- Menú Aulas-----------")
     print("1. Crear Aulas")
     print("2. Buscar Aulas")
-    print("3. Modificar Aulas")
+    print("3. Asignar campers al aula con su ruta respectiva")
     print("4. Salir")
     op=validar_opcion("Opcion: ",1,4)
     return op

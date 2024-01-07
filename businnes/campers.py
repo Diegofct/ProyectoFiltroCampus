@@ -1,6 +1,5 @@
 import json
 import os
-from businnes.aulas import *
 
 def load_campers_json():
     try:
@@ -16,7 +15,7 @@ lista_campers = load_campers_json()
 def crear_camper():
     identificacion = int(input("Ingrese el número de documento: "))
     nombre = input("Ingrese el nombre del camper: ")
-    apellidos = input("Ingrese lo apellidos del camper: ")
+    apellidos = input("Ingrese los apellidos del camper: ")
     direccion = input("Ingrese la dirección del camper: ")
     acudiente = input("Ingrese el nombre del acudiente del camper: ")
     edad = int(input("Ingrese la edad del camper: "))
@@ -105,3 +104,5 @@ def registrar_notas_prueba():
         guardar_json()
     else:
         print("Camper no encontrado.")
+
+

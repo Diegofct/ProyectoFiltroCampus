@@ -2,19 +2,19 @@
   {
     "nombre": "Sputnik",
     "capacidad_maxima": 33,
-    "capacidad_actual": 0,
+    "capacidad_actual": 1,
     "ruta_asignada": "Java"
   },
   {
     "nombre": "Apolo 11",
     "capacidad_maxima": 33,
-    "capacidad_actual": 0,
+    "capacidad_actual": 1,
     "ruta_asignada": "NetCore"
   },
   {
     "nombre": "Artemis",
     "capacidad_maxima": 33,
-    "capacidad_actual": 0,
+    "capacidad_actual": 1,
     "ruta_asignada": "NodeJS"
   }
 ]

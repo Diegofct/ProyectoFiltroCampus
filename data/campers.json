@@ -18,6 +18,49 @@
       "teorica": 90.0,
       "practica": 100.0,
       "promedio": 95.0
+    },
+    "ruta_asignada": "Java"
+  },
+  {
+    "id": 1122334455,
+    "nombre": "Camilo",
+    "apellidos": "Torres",
+    "direccion": "calle 123",
+    "acudiente": "paola",
+    "edad": 25,
+    "email": "camilo@gmail.com",
+    "telefono": "3122222222",
+    "estado": "aprobado",
+    "notasPrueba": {
+      "teorica": 0,
+      "practica": 0,
+      "promedio": 0
+    },
+    "notas_prueba": {
+      "teorica": 80.0,
+      "practica": 70.0,
+      "promedio": 75.0
+    }
+  },
+  {
+    "id": 2233445566,
+    "nombre": "Paula",
+    "apellidos": "Galan",
+    "direccion": "calle 321",
+    "acudiente": "Amparo",
+    "edad": 24,
+    "email": "paula@gmail.com",
+    "telefono": "3243118450",
+    "estado": "aprobado",
+    "notasPrueba": {
+      "teorica": 0,
+      "practica": 0,
+      "promedio": 0
+    },
+    "notas_prueba": {
+      "teorica": 90.0,
+      "practica": 70.0,
+      "promedio": 80.0
     }
   }
 ]

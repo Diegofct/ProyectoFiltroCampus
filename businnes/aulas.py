@@ -1,3 +1,4 @@
+from businnes.campers import lista_campers
 import os
 import json
 
@@ -14,8 +15,8 @@ lista_aulas = load_aulas_json()
 
 def crear_aula():
     nombre_aula = input("Ingrese el nombre del aula: ")
-    capacidad_maxima = int(input("Ingrese la capacidad máxima del aula: "))
-    asignar_ruta = input("Ingrese la ruta de entrenamiento asignada al aula: ")
+    capacidad_maxima = 33
+    asignar_ruta = (input("Ingrese la ruta de entrenamiento asignada al aula: ")).lower()
 
     aula = {
         'nombre': nombre_aula,
@@ -45,3 +46,23 @@ def listar_aulas():
     for aula in lista_aulas:
         print(aula)
 
+
+def asignar_camper_a_ruta():
+    id_camper = int(input("Ingrese el ID del camper: "))
+    asignar_ruta = input("Seleccione la ruta de entrenamiento para el camper: ")
+
+    for camper in lista_campers:
+        if camper['estado'] == 'aprobado' and camper.get('id') == id_camper:
+            for aula in lista_aulas:
+                if asignar_ruta == aula['ruta_asignada']:
+                    if aula['capacidad_actual'] < aula['capacidad_maxima']:
+                        camper['ruta_asignada'] = asignar_ruta
+                        aula['capacidad_actual'] += 1
+                        guardar_json_aulas()
+                        print(f"Camper asignado a la ruta {asignar_ruta}.")
+                        return
+                    else:
+                        print(f"No hay espacio disponible en la ruta {asignar_ruta}.")
+                        return
+
+    print(f"Ruta de entrenamiento {asignar_ruta} no encontrada o camper no aprobado.")
