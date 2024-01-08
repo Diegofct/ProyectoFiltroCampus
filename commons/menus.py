@@ -16,15 +16,16 @@ def menu_campers():
     print("----------- Menú Campers-----------")
     print("1. Crear campers")
     print("2. listar campers")
-    print("3. Registrar notas de campers")
-    print("4. Modificar campers")
-    print("5. Salir")
-    op=validar_opcion("Opcion: ",1,5)
+    print("3. Registrar notas de prueba campers")
+    print("4. Asignar campers al aula con su ruta respectiva")
+    print("5. Modificar campers")
+    print("6. Salir")
+    op=validar_opcion("Opcion: ",1,6)
     return op
 
 def menu_rutas_entrenamiento():
     print("----------- Menú rutas de entrenamiento-----------")
-    print("1. Ver lista de rutas de entrenamiento")
+    print("1. Ver rutas de entrenamiento")
     print("2. Salir")
     op=validar_opcion("Opcion: ",1,2)
     return op
@@ -32,10 +33,11 @@ def menu_rutas_entrenamiento():
 def menu_trainers():
     print("----------- Menú Trainers-----------")
     print("1. Crear trainer")
-    print("2. Buscar trainer")
-    print("3. Modificar trainer")
-    print("4. Salir")
-    op=validar_opcion("Opcion: ",1,4)
+    print("2. Ver trainers")
+    print("3. Asignar trainer a ruta de entrenamiento")
+    print("4. Modificar trainer")
+    print("5. Salir")
+    op=validar_opcion("Opcion: ",1,5)
     return op
 
 def menu_matriculas():
@@ -50,15 +52,14 @@ def menu_matriculas():
 def menu_aulas():
     print("----------- Menú Aulas-----------")
     print("1. Crear Aulas")
-    print("2. Buscar Aulas")
-    print("3. Asignar campers al aula con su ruta respectiva")
-    print("4. Salir")
-    op=validar_opcion("Opcion: ",1,4)
+    print("2. Ver Aulas")
+    print("3. Salir")
+    op=validar_opcion("Opcion: ",1,3)
     return op
 
 def menu_reportes():
     print("----------- Menú Reportes-----------")
-    print("1. Listar campers estado inscripto")
+    print("1. Listar campers estado inscrito")
     print("2. Listar campers aprobaron examen")
     print("3. Listar trainers trabajando en campus")
     print("4. Salir")

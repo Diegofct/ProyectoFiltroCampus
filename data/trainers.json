@@ -1,0 +1,18 @@
+[
+  {
+    "id": 111222333,
+    "Nombre": "Camilo",
+    "Apellidos": "Rodriguez",
+    "Edad": 35,
+    "Horario": {
+      "Jornada Ma\u00f1ana": {
+        "Primera clase": "6:00 am - 10am",
+        "Segunda clase": "10:00 am - 2:00 pm"
+      },
+      "Jornada Tarde": {
+        "Primera clase": "2:00 pm - 6:00pm",
+        "Segunda clase": "6:00pm - 10:00 pm"
+      }
+    }
+  }
+]

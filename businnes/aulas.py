@@ -1,4 +1,5 @@
 from businnes.campers import lista_campers
+from businnes.trainers import lista_trainers, guardar_json_trainers
 import os
 import json
 
@@ -49,13 +50,13 @@ def listar_aulas():
 
 def asignar_camper_a_ruta():
     id_camper = int(input("Ingrese el ID del camper: "))
-    asignar_ruta = input("Seleccione la ruta de entrenamiento para el camper: ")
+    asignar_ruta = input("Seleccione la ruta de entrenamiento para el camper: ").lower()
 
     for camper in lista_campers:
         if camper['estado'] == 'aprobado' and camper.get('id') == id_camper:
             for aula in lista_aulas:
                 if asignar_ruta == aula['ruta_asignada']:
-                    if aula['capacidad_actual'] < aula['capacidad_maxima']:
+                    if aula['capacidad_actual'] <= aula['capacidad_maxima']:
                         camper['ruta_asignada'] = asignar_ruta
                         aula['capacidad_actual'] += 1
                         guardar_json_aulas()
@@ -66,3 +67,37 @@ def asignar_camper_a_ruta():
                         return
 
     print(f"Ruta de entrenamiento {asignar_ruta} no encontrada o camper no aprobado.")
+
+
+def asignar_trainer_a_ruta():
+    id_trainer = int(input("Ingrese el id del trainer para asignarle una ruta de entrenamiento: "))
+    asignar_ruta_trainer = input("Ingrese la ruta de entrenamiento que impartirá el trainer: ")
+
+    ruta_encontrada = False
+    for aula in lista_aulas:
+        if asignar_ruta_trainer == aula['ruta_asignada']:
+            ruta_encontrada = True
+            break
+
+    if ruta_encontrada:
+        for trainer in lista_trainers:
+            if 'ruta_asignada' not in trainer and trainer.get('id')==id_trainer:
+                trainer['ruta_asignada'] = asignar_ruta_trainer
+
+                if 'trainers_asignados' not in aula:
+                    aula['trainers_asignados'] = []
+
+                aula['trainers_asignados'].append({
+                    'nombre': trainer['Nombre'],
+                    'apellidos': trainer['Apellidos']
+                })
+
+                guardar_json_aulas()
+                guardar_json_trainers()
+                print(f"Trainer ha sido asignado a la ruta {asignar_ruta_trainer}")
+                return
+            else:
+                print("El trainer ya está asignado a una ruta.")
+                return
+    else:
+        print(f"No existe la ruta {asignar_ruta_trainer}.")

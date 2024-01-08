@@ -2,32 +2,44 @@ from commons.utils import limpiar_pantalla
 from commons.menus import menu_principal,menu_trainers,menu_campers,menu_matriculas,menu_aulas,menu_reportes,menu_rutas_entrenamiento
 from businnes.campers import crear_camper,listar_campers, registrar_notas_prueba
 from businnes.rutasEntrenamiento import rutas_entrenamiento, listar_rutas
-from businnes.aulas import crear_aula, listar_aulas, asignar_camper_a_ruta
+from businnes.aulas import crear_aula, listar_aulas, asignar_camper_a_ruta, asignar_trainer_a_ruta
+from businnes.trainers import crear_trainer, ver_lista_trainers
 
-# funtions
 def campers():      
     limpiar_pantalla()
     op=menu_campers()
     if op==1:
        crear_camper()
-       input("Clic cualquier teclas [continuar]: ")
+       input("Presiona cualquier tecla para continuar: ")
     if op==2:
        listar_campers()
-       input("Clic cualquier teclas [continuar]: ")
+       input("Presiona cualquier tecla para continuar: ")
     if op==3:
        registrar_notas_prueba()
-       input("Clic cualquier teclas [continuar]: ")
+       input("Presiona cualquier tecla para continuar: ")
+    if op==4:
+        asignar_camper_a_ruta()
+        input("Presiona cualquier tecla para continuar: ")
 
 def rutas_entrenamiento():
    limpiar_pantalla()
    op=menu_rutas_entrenamiento()
    if op==1:
        listar_rutas()
-       input("Clic cualquier teclas [continuar]: ")
+       input("Presiona cualquier tecla para continuar: ")
 
 def trainers():
     limpiar_pantalla()    
     op=menu_trainers()
+    if op==1:
+        crear_trainer()
+        input("Presiona cualquier tecla para continuar: ")
+    if op==2:
+        ver_lista_trainers()
+        input("Presiona cualquier tecla para continuar: ")
+    if op==3:
+        asignar_trainer_a_ruta()
+        input("Presiona cualquier tecla para continuar: ")
 
 def matriculas():
     limpiar_pantalla()    
@@ -38,20 +50,16 @@ def aulas():
     op=menu_aulas()
     if op==1:
         crear_aula()
-        input("Clic cualquier teclas [continuar]: ")
+        input("Presiona cualquier tecla para continuar: ")
     if op==2:
         listar_aulas()
-        input("Clic cualquier teclas [continuar]: ")
-    if op==3:
-        asignar_camper_a_ruta()
-        input("Clic cualquier teclas [continuar]: ")
-
+        input("Presiona cualquier tecla para continuar: ")
+    
 def reportes():
     limpiar_pantalla()    
     op=menu_reportes()
 
 
-#start
 while True: 
    limpiar_pantalla()
    op=menu_principal()
@@ -68,6 +76,6 @@ while True:
    elif op==6:
        reportes()
    elif op==7:
-       print("Saliendo")
+       print("Saliendo del programa, ¡Hasta luego!")
        break
        
