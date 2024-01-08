@@ -3,12 +3,12 @@ import os
 
 def load_campers_json():
     try:
-      with open(os.path.join("data", "campers.json"), 'r') as archivo_json:        
-        lista_campers = json.load(archivo_json)
-        print("La lista de campers ha sido guardada")
-        return lista_campers
+        with open(os.path.join("data", "campers.json"), 'r') as archivo_json:        
+            lista_campers = json.load(archivo_json)
+            print("La lista de campers ha sido cargada")
+            return lista_campers
     except Exception as e:
-      print(f"Error al guardar el archivo: {e}")
+        print(f"Error al cargar el archivo: {e}")
 
 lista_campers = load_campers_json()
 
@@ -39,17 +39,16 @@ def crear_camper():
         'email': email,
         'telefono': telefono,
         'estado': estado,
-        'notasPrueba': notas_prueba
+        'notas_prueba': notas_prueba
     }
 
     lista_campers.append(camper)
     print("Se creó el camper con éxito")
     guardar_json()
 
-
 def guardar_json():
     try:
-      with open(os.path.join("data", "campers.json"), 'w') as archivo_json:
+        with open(os.path.join("data", "campers.json"), 'w') as archivo_json:
             for camper in lista_campers:
                 if 'notas_prueba' in camper:
                     camper['notas_prueba'] = {
@@ -62,16 +61,14 @@ def guardar_json():
     except FileNotFoundError:
         print("El archivo no existe. Puede que aún no haya campers guardados.")
     except json.JSONDecodeError:
-        print("Error al decodificar el archivo JSON . El formato podría ser incorrecto.")
+        print("Error al decodificar el archivo JSON. El formato podría ser incorrecto.")
     except Exception as e:
         print("Error desconocido:")
-      
 
 def listar_campers():
     print("Listado de campers: ")
     for camper in lista_campers:
         print(camper)
-
 
 def registrar_notas_prueba():
     id_camper = int(input("Ingrese el ID del camper: "))

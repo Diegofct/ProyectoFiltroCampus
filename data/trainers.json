@@ -1,17 +1,18 @@
 [
   {
-    "id": 111222333,
+    "id": 1122334455,
     "Nombre": "Camilo",
     "Apellidos": "Rodriguez",
     "Edad": 35,
+    "Profesion": "ingeniero de software",
     "Horario": {
       "Jornada Ma\u00f1ana": {
-        "Primera clase": "6:00 am - 10am",
+        "Primera clase": "6:00 am - 10:00 am",
         "Segunda clase": "10:00 am - 2:00 pm"
       },
       "Jornada Tarde": {
-        "Primera clase": "2:00 pm - 6:00pm",
-        "Segunda clase": "6:00pm - 10:00 pm"
+        "Primera clase": "2:00 pm - 6:00 pm",
+        "Segunda clase": "6:00 pm - 10:00 pm"
       }
     }
   }

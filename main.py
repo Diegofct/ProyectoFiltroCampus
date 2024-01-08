@@ -4,6 +4,7 @@ from businnes.campers import crear_camper,listar_campers, registrar_notas_prueba
 from businnes.rutasEntrenamiento import rutas_entrenamiento, listar_rutas
 from businnes.aulas import crear_aula, listar_aulas, asignar_camper_a_ruta, asignar_trainer_a_ruta
 from businnes.trainers import crear_trainer, ver_lista_trainers
+from businnes.matricula import realizar_matricula
 
 def campers():      
     limpiar_pantalla()
@@ -44,6 +45,9 @@ def trainers():
 def matriculas():
     limpiar_pantalla()    
     op=menu_matriculas()
+    if op==1:
+        realizar_matricula()
+        input("Presiona cualquier tecla para continuar: ")
 
 def aulas():
     limpiar_pantalla()    
