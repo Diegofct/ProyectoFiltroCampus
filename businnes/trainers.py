@@ -19,8 +19,8 @@ def crear_trainer():
     edad = int(input("Ingrese la edad del profesor: "))
     profesion = input("¿Cuál es la profesión del profesor?: ")
     
-    jornada_manana = {'Primera clase': '6:00 am - 10am', 'Segunda clase': '10:00 am - 2:00 pm'}
-    jornada_tarde = {'Primera clase': '2:00 pm - 6:00pm', 'Segunda clase': '6:00pm - 10:00 pm'}
+    jornada_manana = {'Primera clase': '6:00 am - 10:00 am', 'Segunda clase': '10:00 am - 2:00 pm'}
+    jornada_tarde = {'Primera clase': '2:00 pm - 6:00 pm', 'Segunda clase': '6:00 pm - 10:00 pm'}
 
     horario = {
         'Jornada Mañana': jornada_manana,
