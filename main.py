@@ -1,10 +1,11 @@
 from commons.utils import limpiar_pantalla
 from commons.menus import menu_principal,menu_trainers,menu_campers,menu_matriculas,menu_aulas,menu_reportes,menu_rutas_entrenamiento
 from businnes.campers import crear_camper,listar_campers, registrar_notas_prueba
-from businnes.rutasEntrenamiento import rutas_entrenamiento, listar_rutas
-from businnes.aulas import crear_aula, listar_aulas, asignar_camper_a_ruta, asignar_trainer_a_ruta
+from businnes.rutasEntrenamiento import rutas_entrenamiento
+from businnes.aulas import crear_aula, listar_aulas
 from businnes.trainers import crear_trainer, ver_lista_trainers
 from businnes.matricula import realizar_matricula
+from businnes.filtros import registrar_notas_filtro
 
 def campers():      
     limpiar_pantalla()
@@ -18,15 +19,12 @@ def campers():
     if op==3:
        registrar_notas_prueba()
        input("Presiona cualquier tecla para continuar: ")
-    if op==4:
-        asignar_camper_a_ruta()
-        input("Presiona cualquier tecla para continuar: ")
 
 def rutas_entrenamiento():
    limpiar_pantalla()
    op=menu_rutas_entrenamiento()
    if op==1:
-       listar_rutas()
+       rutas_entrenamiento()
        input("Presiona cualquier tecla para continuar: ")
 
 def trainers():
@@ -38,15 +36,15 @@ def trainers():
     if op==2:
         ver_lista_trainers()
         input("Presiona cualquier tecla para continuar: ")
-    if op==3:
-        asignar_trainer_a_ruta()
-        input("Presiona cualquier tecla para continuar: ")
 
 def matriculas():
     limpiar_pantalla()    
     op=menu_matriculas()
     if op==1:
         realizar_matricula()
+        input("Presiona cualquier tecla para continuar: ")
+    if op==2:
+        registrar_notas_filtro()
         input("Presiona cualquier tecla para continuar: ")
 
 def aulas():

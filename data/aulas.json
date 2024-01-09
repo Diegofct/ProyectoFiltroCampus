@@ -9,8 +9,9 @@
   {
     "nombre": "Apolo",
     "capacidad_maxima": 33,
-    "capacidad_actual": 0,
-    "ruta_asignada": "nodejs"
+    "capacidad_actual": 1,
+    "ruta_asignada": "nodejs",
+    "trainer_asignado": "Miguel"
   },
   {
     "nombre": "Artemis",

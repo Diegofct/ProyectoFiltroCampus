@@ -56,6 +56,13 @@ def guardar_json():
                         'practica': camper['notas_prueba']['practica'],
                         'promedio': camper['notas_prueba']['promedio']
                     }
+                    if 'filtro' in camper['notas_prueba']:
+                        camper['filtro'] = {
+                            'teorica': camper['filtro']['teorica'],
+                            'practica': camper['filtro']['practica'],
+                            'quices_trabajos': camper['filtro']['quices_trabajos'],
+                            'promedio': camper['filtro']['promedio']
+                        }
             json.dump(lista_campers, archivo_json, indent=2)
             print("La lista de campers ha sido guardada")
     except FileNotFoundError:

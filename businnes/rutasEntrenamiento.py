@@ -51,15 +51,15 @@ def rutas_entrenamiento():
 
 def guardar_json_rutas():
     try:
-      with open(os.path.join("data", "rutasEntrenamiento.json"), 'w') as rutas_json:
-        json.dump(lista_rutasEntrenamiento, rutas_json, indent=2)
-        print("La lista de campers ha sido guardada")
+        with open(os.path.join("data", "rutasEntrenamiento.json"), 'w') as rutas_json:
+            json.dump(lista_rutasEntrenamiento, rutas_json, indent=2)
+            print("La lista de rutas de entrenamiento ha sido guardada") 
     except FileNotFoundError:
-        print("El archivo no existe. Puede que aún no haya campers guardados.")
+        print("El archivo no existe. Puede que aún no haya rutas de entrenamiento guardadas.")
     except json.JSONDecodeError:
-        print("Error al decodificar el archivo JSON . El formato podría ser incorrecto.")
+        print("Error al decodificar el archivo JSON. El formato podría ser incorrecto.")
     except Exception as e:
-        print("Error desconocido:")
+        print(f"Error desconocido: {e}")
 
 
 def listar_rutas():

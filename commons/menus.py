@@ -41,10 +41,9 @@ def menu_trainers():
 def menu_matriculas():
     print("----------- Menú Matriculas-----------")
     print("1. Crear Matriculas")
-    print("2. Buscar Matriculas")
-    print("3. Modificar Matriuclas")
-    print("4. Salir")
-    op=validar_opcion("Opcion: ",1,4)
+    print("2. Registrar notas de filtros")
+    print("3. Salir")
+    op=validar_opcion("Opcion: ",1,3)
     return op
 
 def menu_aulas():

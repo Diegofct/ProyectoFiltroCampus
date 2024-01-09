@@ -22,6 +22,44 @@
       "salon_entrenamiento": "Sputnik",
       "trainer_encargado": "Camilo"
     },
-    "estado_matricula": "matriculado"
+    "estado_matricula": "matriculado",
+    "notas_filtro": {
+      "teorica": 100.0,
+      "practica": 100.0,
+      "quices_trabajos": 90.0,
+      "promedio": 99.0,
+      "estado_filtro": "aprobado"
+    }
+  },
+  {
+    "id": 100200300,
+    "nombre": "Paula",
+    "apellidos": "Galan",
+    "direccion": "calle 64",
+    "acudiente": "Amparo",
+    "edad": 24,
+    "email": "paula@gmail.com",
+    "telefono": "3243118250",
+    "estado": "aprobado",
+    "notas_prueba": {
+      "teorica": 80.0,
+      "practica": 90.0,
+      "promedio": 85.0
+    },
+    "matricula": {
+      "ruta_asignada": "nodejs",
+      "fecha_inicio": "27/11/2023",
+      "fecha_finalizacion": "27/09/2024",
+      "experto_encargado": "Miguel",
+      "salon_entrenamiento": "Apolo",
+      "trainer_encargado": "Miguel"
+    },
+    "estado_matricula": "matriculado",
+    "notas_filtro": {
+      "teorica": 80.0,
+      "practica": 90.0,
+      "quices_trabajos": 100.0,
+      "promedio": 88.0
+    }
   }
 ]
