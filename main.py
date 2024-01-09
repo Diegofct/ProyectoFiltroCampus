@@ -6,6 +6,7 @@ from businnes.aulas import crear_aula, listar_aulas
 from businnes.trainers import crear_trainer, ver_lista_trainers, modificar_trainer
 from businnes.matricula import realizar_matricula
 from businnes.filtros import registrar_notas_filtro
+from businnes.reportes import *
 
 def campers():      
     limpiar_pantalla()
@@ -66,7 +67,21 @@ def aulas():
 def reportes():
     limpiar_pantalla()    
     op=menu_reportes()
-
+    if op==1:
+        listar_campers_inscritos()
+        input("Presiona cualquier tecla para continuar: ")
+    if op==2:
+        listar_campers_aprobados()
+        input("Presiona cualquier tecla para continuar: ")
+    if op==3:
+        listar_entrenadores()
+        input("Presiona cualquier tecla para continuar: ")
+    if op==4:
+        listar_campers_bajo_rendimiento()
+        input("Presiona cualquier tecla para continuar: ")
+    if op==5:
+        listar_campers_entrenador_ruta()
+        input("Presiona cualquier tecla para continuar: ")
 
 while True: 
    limpiar_pantalla()

@@ -59,6 +59,8 @@ def menu_reportes():
     print("1. Listar campers estado inscrito")
     print("2. Listar campers aprobaron examen")
     print("3. Listar trainers trabajando en campus")
-    print("4. Salir")
-    op=validar_opcion("Opcion: ",1,4)
+    print("4. Estudiantes en riesgo por bajo rendimiento")
+    print("5. Campers y Trainers asignados a la misma ruta")
+    print("6. Salir")
+    op=validar_opcion("Opcion: ",1,6)
     return op
