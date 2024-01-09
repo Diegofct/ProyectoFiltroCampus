@@ -45,8 +45,8 @@ def rutas_entrenamiento():
     lista_rutasEntrenamiento.append(ruta_nodejs)
     lista_rutasEntrenamiento.append(ruta_java)
     lista_rutasEntrenamiento.append(ruta_netcore)
+    
     guardar_json_rutas()
-    listar_rutas()
 
 
 def guardar_json_rutas():

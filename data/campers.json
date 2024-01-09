@@ -37,8 +37,8 @@
     "apellidos": "Galan",
     "direccion": "calle 64",
     "acudiente": "Amparo",
-    "edad": 24,
-    "email": "paula@gmail.com",
+    "edad": 25,
+    "email": "paula01@gmail.com",
     "telefono": "3243118250",
     "estado": "aprobado",
     "notas_prueba": {
@@ -54,12 +54,6 @@
       "salon_entrenamiento": "Apolo",
       "trainer_encargado": "Miguel"
     },
-    "estado_matricula": "matriculado",
-    "notas_filtro": {
-      "teorica": 80.0,
-      "practica": 90.0,
-      "quices_trabajos": 100.0,
-      "promedio": 88.0
-    }
+    "estado_matricula": "matriculado"
   }
 ]

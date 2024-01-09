@@ -1,9 +1,9 @@
 from commons.utils import limpiar_pantalla
 from commons.menus import menu_principal,menu_trainers,menu_campers,menu_matriculas,menu_aulas,menu_reportes,menu_rutas_entrenamiento
-from businnes.campers import crear_camper,listar_campers, registrar_notas_prueba
+from businnes.campers import crear_camper,listar_campers, registrar_notas_prueba, modificar_camper
 from businnes.rutasEntrenamiento import rutas_entrenamiento
 from businnes.aulas import crear_aula, listar_aulas
-from businnes.trainers import crear_trainer, ver_lista_trainers
+from businnes.trainers import crear_trainer, ver_lista_trainers, modificar_trainer
 from businnes.matricula import realizar_matricula
 from businnes.filtros import registrar_notas_filtro
 
@@ -19,6 +19,9 @@ def campers():
     if op==3:
        registrar_notas_prueba()
        input("Presiona cualquier tecla para continuar: ")
+    if op==4:
+        modificar_camper()
+        input("Presiona cualquier tecla para continuar: ")
 
 def rutas_entrenamiento():
    limpiar_pantalla()
@@ -35,6 +38,9 @@ def trainers():
         input("Presiona cualquier tecla para continuar: ")
     if op==2:
         ver_lista_trainers()
+        input("Presiona cualquier tecla para continuar: ")
+    if op==3:
+        modificar_trainer()
         input("Presiona cualquier tecla para continuar: ")
 
 def matriculas():

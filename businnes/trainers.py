@@ -60,3 +60,35 @@ def ver_lista_trainers():
     print("Lista de trainers:")
     for trainer in lista_trainers:
         print(trainer)
+
+def modificar_trainer():
+    id_trainer = int(input("Ingrese el ID del trainer que desea modificar: "))
+    
+    trainer_encontrado = None
+    for trainer in lista_trainers:
+        if trainer.get('id') == id_trainer:
+            trainer_encontrado = trainer
+            break
+
+    if trainer_encontrado:
+        print("Datos actuales del trainer:")
+        print(trainer_encontrado)
+
+        nombre_nuevo = input("Ingrese el nuevo nombre del trainer (deje en blanco si no desea cambiar): ")
+        apellidos_nuevos = input("Ingrese los nuevos apellidos del trainer (deje en blanco si no desea cambiar): ")
+        edad_nueva = input("Ingrese la nueva edad del trainer (deje en blanco si no desea cambiar): ")
+        profesion_nueva = input("Ingrese la nueva profesión del trainer (deje en blanco si no desea cambiar): ")
+
+        if nombre_nuevo:
+            trainer_encontrado['Nombre'] = nombre_nuevo
+        if apellidos_nuevos:
+            trainer_encontrado['Apellidos'] = apellidos_nuevos
+        if edad_nueva:
+            trainer_encontrado['Edad'] = int(edad_nueva)
+        if profesion_nueva:
+            trainer_encontrado['Profesion'] = profesion_nueva
+
+        print("Datos modificados con éxito.")
+        guardar_json_trainers()
+    else:
+        print("Trainer no encontrado.")

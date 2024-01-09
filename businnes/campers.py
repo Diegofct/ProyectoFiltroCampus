@@ -21,7 +21,7 @@ def crear_camper():
     edad = int(input("Ingrese la edad del camper: "))
     email = input("Ingrese el correo electrónico del camper: ")
     telefono = input("Ingrese el número de teléfono del camper: ")
-    estado = input("Ingrese el estado del camper: ")
+    estado = "inscrito"
 
     notas_prueba = {
         'teorica': 0,
@@ -109,4 +109,44 @@ def registrar_notas_prueba():
     else:
         print("Camper no encontrado.")
 
+def modificar_camper():
+    id_camper = int(input("Ingrese el ID del camper que desea modificar: "))
+    
+    camper_encontrado = None
+    for camper in lista_campers:
+        if camper.get('id') == id_camper:
+            camper_encontrado = camper
+            break
+
+    if camper_encontrado:
+        print("Datos actuales del camper:")
+        print(camper_encontrado)
+
+        nombre_nuevo = input("Ingrese el nuevo nombre del camper (deje en blanco si no desea cambiar): ")
+        apellidos_nuevos = input("Ingrese los nuevos apellidos del camper (deje en blanco si no desea cambiar): ")
+        direccion_nueva = input("Ingrese la nueva dirección del camper (deje en blanco si no desea cambiar): ")
+        acudiente_nuevo = input("Ingrese el nuevo nombre del acudiente del camper (deje en blanco si no desea cambiar): ")
+        edad_nueva = input("Ingrese la nueva edad del camper (deje en blanco si no desea cambiar): ")
+        email_nuevo = input("Ingrese el nuevo correo electrónico del camper (deje en blanco si no desea cambiar): ")
+        telefono_nuevo = input("Ingrese el nuevo número de teléfono del camper (deje en blanco si no desea cambiar): ")
+
+        if nombre_nuevo:
+            camper_encontrado['nombre'] = nombre_nuevo
+        if apellidos_nuevos:
+            camper_encontrado['apellidos'] = apellidos_nuevos
+        if direccion_nueva:
+            camper_encontrado['direccion'] = direccion_nueva
+        if acudiente_nuevo:
+            camper_encontrado['acudiente'] = acudiente_nuevo
+        if edad_nueva:
+            camper_encontrado['edad'] = int(edad_nueva)
+        if email_nuevo:
+            camper_encontrado['email'] = email_nuevo
+        if telefono_nuevo:
+            camper_encontrado['telefono'] = telefono_nuevo
+
+        print("Datos modificados con éxito.")
+        guardar_json()
+    else:
+        print("Camper no encontrado.")
 
